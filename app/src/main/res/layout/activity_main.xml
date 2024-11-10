@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width= "match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/login_background"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="389dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/trackitlogo" />
+
+    <ImageView
+        android:id="@+id/MainPagePicture"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        app:srcCompat="@drawable/welcomepicture" />
+
+    <TextView
+        android:id="@+id/MainPageQuote"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="Take Control of Your Finances, One Tap at a Time."
+        android:textColor="@color/message_color"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/LogInButton"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/message_color"
+        android:onClick="goToLoginPage"
+        android:text="Log In"
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/SignUpQuestion"
+        android:layout_width="217dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Don't have an account?"
+        android:textColor="@color/message_color"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/SignUpButton"
+        android:layout_width="220dp"
+        android:layout_height="42dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:onClick="goToSignupPage"
+        android:text="Sign up here"
+        android:textColor="@color/message_color"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+</LinearLayout>

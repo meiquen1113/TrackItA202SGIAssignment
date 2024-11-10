@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_background"
+    android:orientation="vertical"
+    tools:context=".ExpenseDashboard">
+
+    <LinearLayout
+        android:id="@+id/header_top_bar"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_marginTop="7dp"
+        android:background="@color/topbar_background"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/header_title1"
+            android:layout_centerHorizontal="true"
+            android:layout_width="250dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/WelcomeWordDisplay"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:textColor="#654321"
+                android:text="Welcome back" />
+
+            <TextView
+                android:id="@+id/TVdashboardMessage"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/WelcomeWordDisplay"
+                android:layout_centerHorizontal="true"
+                android:textSize="22dp"
+                android:layout_marginBottom="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/design_default_color_primary"
+                android:text="Sunny Chua" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/dashboardpicture" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="390dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_top_bar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/box"
+        android:orientation="vertical"
+        android:id="@+id/boxview1"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="390dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="275dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Cash Flow"
+                    android:textColor="@color/text_cashflow"
+                    android:textSize="28dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/TVcashflow"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:gravity="center"
+                    android:text="+RM 5000"
+                    android:textColor="#444444"
+                    android:textSize="28dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="99dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                app:srcCompat="@drawable/cashlogo" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="73dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                app:srcCompat="@drawable/incomelogo" />
+
+            <LinearLayout
+                android:layout_width="102dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text3"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Income"
+                    android:textColor="@color/text_income"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/TVincome"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="RM 7000"
+                    android:textColor="#444444"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="77dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                app:srcCompat="@drawable/expenseslogo" />
+
+            <LinearLayout
+                android:layout_width="132dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text5"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Expenses"
+                    android:textColor="@color/text_expense"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/TVexpense"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="RM 2000"
+                    android:textColor="#444444"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/Transaction_Bar"
+        android:layout_below="@+id/boxview2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:padding="3dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/topbar_background"
+        android:textSize="16dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="#554321"
+        android:text="Transaction Record Listing" />
+
+    <!--recycler view for displaying our Expenses-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idRVExpenses1"
+        android:layout_below="@+id/Transaction_Bar"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="410dp" />
+
+    <LinearLayout
+        android:id="@+id/boxview2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/boxview1"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="7dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:background="@drawable/box2">
+
+        <TextView
+            android:onClick="gotoUpdateExpenses"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/add_entry_icon" />
+
+        <TextView
+            android:onClick="gotoIndicatorsPage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/boxview1"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/chart_icon" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/boxview1"
+            android:onClick="goToSettingsPage"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/settings_icon" />
+
+        <TextView
+            android:onClick="gotoWelcomePage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/boxview1"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/logout_icon" />
+
+    </LinearLayout>
+
+</RelativeLayout>

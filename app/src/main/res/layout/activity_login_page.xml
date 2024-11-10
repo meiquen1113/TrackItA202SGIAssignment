@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/login_background"
+    tools:context=".LoginPage">
+
+    <ImageView
+        android:id="@+id/loginimage"
+        android:layout_width="339dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/loginpagelogo" />
+
+
+
+    <LinearLayout
+        android:id="@+id/loginPage"
+        android:layout_below="@+id/loginimage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Welcome Back"
+            android:textColor="@color/message_color"
+            android:textSize="28dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/splashMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/loginimage"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/message_color"
+            android:padding="5dp"
+            android:text="Today Tips: Spend wisely!" />
+
+        <EditText
+            android:id="@+id/userNameText"
+            android:layout_width="280dp"
+            android:layout_height="48dp"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_input"
+            android:drawableStart="@drawable/username_icon"
+            android:drawablePadding="15dp"
+            android:ems="10"
+            android:hint="Username"
+            android:inputType="text"
+            android:padding="7dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/passwordText"
+            android:layout_width="280dp"
+            android:layout_height="48dp"
+            android:layout_margin="7dp"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_input"
+            android:drawableStart="@drawable/password_icon"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="text"
+            android:padding="7dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:password="true"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+    <!--button for updating our course-->
+
+    <Button
+        android:id="@+id/idBtnSignIn"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginPage"
+        android:layout_margin="10dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/message_color"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/idBtnSignIn"
+        android:gravity="center"
+        android:onClick="gotoSignupPage"
+        android:padding="15dp"
+        android:text="New User? Sign-up here."
+        android:textColor="@color/message_color"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:onClick="gotoChangePassword1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:textSize="18dp"
+        android:gravity="center"
+        android:textColor="#ee5500"
+        android:textStyle="bold"
+        android:padding="15dp"
+        android:text="Forgot Password?" />
+
+</RelativeLayout>
