@@ -141,12 +141,12 @@ public class IndicatorsPage extends AppCompatActivity {
         pieChart.addPieSlice(
                 new PieModel(
                         "Grocery",
-                        Integer.parseInt(tvPieSlice4P.getText().toString()),
+                        Integer.parseInt(tvPieSlice5P.getText().toString()),
                         Color.parseColor("#F9B6e6")));
         pieChart.addPieSlice(
                 new PieModel(
                         "Others",
-                        Integer.parseInt(tvPieSlice4P.getText().toString()),
+                        Integer.parseInt(tvPieSlice6P.getText().toString()),
                         Color.parseColor("#29F616")));
 
         // To animate the pie chart

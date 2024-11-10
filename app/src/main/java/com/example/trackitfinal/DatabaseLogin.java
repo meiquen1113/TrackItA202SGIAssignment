@@ -46,7 +46,6 @@ public class DatabaseLogin extends SQLiteOpenHelper {
         contentValues.put(COL_3, fullname);
         contentValues.put(COL_4, email);
         db.insert(TABLE_NAME, null, contentValues);
-
     }
 
     public void updatePassword(String username, String password)
