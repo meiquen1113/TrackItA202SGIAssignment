@@ -31,7 +31,7 @@ public class SmartHandlerAI {
 
     // Generate a message when cash flow is low
     public String getCashFlowMessage(float cash_flow, float income) {
-        if (cash_flow != 0) {
+        if (cash_flow != 0 && income != 0 ) {
             if (cash_flow < 0) {
                 return ("Warning! Your cash flow is negative. Start saving now!");
             } else if (cash_flow <= 0.5 * income) {

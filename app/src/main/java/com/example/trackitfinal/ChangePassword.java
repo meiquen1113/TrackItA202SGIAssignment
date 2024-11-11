@@ -24,7 +24,7 @@ public class ChangePassword extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+        // EdgeToEdge.enable(this);
         setContentView(R.layout.activity_change_password);
 
         usernameET = findViewById((R.id.EntUsernameChgPswd));
@@ -33,6 +33,7 @@ public class ChangePassword extends AppCompatActivity {
         changePassButton = findViewById((R.id.BtnChangePswd));
         databaseLogin = new DatabaseLogin(this);
         hashPassword = new MD5Hashing();
+        InputValidation checkInput = new InputValidation();
 
         changePassButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,10 +46,17 @@ public class ChangePassword extends AppCompatActivity {
                 if (user.isEmpty() || email.isEmpty()) {
                     Toast.makeText(ChangePassword.this, "Please enter username and email", Toast.LENGTH_SHORT).show();
                 } else {
+                    // input validation to ensure correct password format.
+                    String validateMessage = checkInput.validPassword(pass);
+                    if ( validateMessage != null) {
+                        Toast.makeText(ChangePassword.this, validateMessage, Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    // validate username & email pair is correct in sql dbase before updating the password.
                     String profileName = databaseLogin.checkProfile(user, email);
                     if (profileName != "null") {
                         databaseLogin.updatePassword(user,hashPswd);
-                        Toast.makeText(ChangePassword.this, "Password changed for " + profileName, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ChangePassword.this, "Password successfully changed for " + profileName, Toast.LENGTH_LONG).show();
                         //Intent intent = new Intent(ChangePassword.this, ExpenseDashboard.class);
                         //startActivity(intent);
                         finish();

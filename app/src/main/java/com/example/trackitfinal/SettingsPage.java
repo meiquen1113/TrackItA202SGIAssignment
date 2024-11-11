@@ -19,11 +19,13 @@ public class SettingsPage extends AppCompatActivity {
     private TextView welcome, loginFullname, loginEmail, loginOldpassword, loginNewPassword;
     DatabaseLogin databaseLogin;
     MD5Hashing hashPassword;
+    // object declaration for input validation
+    InputValidation checkInput = new InputValidation();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //EdgeToEdge.enable(this);
+        // EdgeToEdge.enable(this);
         setContentView(R.layout.activity_settings_page);
 
         // initializing all our variables.
@@ -42,13 +44,14 @@ public class SettingsPage extends AppCompatActivity {
         // display & retrive the username & email from sql dbase
         databaseLogin = new DatabaseLogin(this);
         hashPassword = new MD5Hashing();
+        // retrieve the full name & email data from the sql dbase
         loginFullname.setText(databaseLogin.getFullname(username));
         loginEmail.setText(databaseLogin.getEmail(username));
-
     }
 
     // Update the login profile to sql database.
     public void updateProfile (View view) {
+
         // below line is to get data from all edit text fields.
         String usernameTxt = welcome.getText().toString();
         String fullnameProfile = loginFullname.getText().toString();
@@ -57,6 +60,17 @@ public class SettingsPage extends AppCompatActivity {
         // validating if the text fields are empty or not.
         if (fullnameProfile.isEmpty() || emailProfile.isEmpty()) {
             Toast.makeText(SettingsPage.this, "Please enter all the data..", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        // input validation to ensure correct full name & email format.
+        String validateMessage = checkInput.validFullname(fullnameProfile);
+        if ( validateMessage != null) {
+            Toast.makeText(SettingsPage.this, validateMessage, Toast.LENGTH_SHORT).show();
+            return;
+        }
+        validateMessage = checkInput.validEmail(emailProfile);
+        if ( validateMessage != null) {
+            Toast.makeText(SettingsPage.this, validateMessage, Toast.LENGTH_SHORT).show();
             return;
         }
         // update login profile to sqlite dbase and pass all our values to it.
@@ -82,6 +96,13 @@ public class SettingsPage extends AppCompatActivity {
             Toast.makeText(SettingsPage.this, "Please enter both old and new password.", Toast.LENGTH_SHORT).show();
             return;
         }
+        // input validation to ensure correct password format.
+        String validateMessage = checkInput.validPassword(newpassword);
+        if ( validateMessage != null) {
+            Toast.makeText(SettingsPage.this, validateMessage, Toast.LENGTH_SHORT).show();
+            return;
+        }
+        // validate the username & old password pair is correct before updating the new password.
         String loggedInName = databaseLogin.checkLogin(usernameTxt, hashOldPswd);
         if (loggedInName != "null") {
             // update login profile to sqlite dbase and pass all our values to it.

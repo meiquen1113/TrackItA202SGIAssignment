@@ -80,7 +80,7 @@ public class InputValidation {
         return (null);
     }
 
-    // validate the email data entry to meet requirements (xxx@yyy.zz)
+    // validate the fullname data entry to meet requirements (max/min char, no special char etc)
     // return null if valid, otherwise specific error message string will be return.
     public String validFullname(String name) {
         if (name.length() < 6 ) {
@@ -90,7 +90,26 @@ public class InputValidation {
             return ("Fullname length is too long! Must be between 8 to 16 chars length.");
         }
         if (!isAlpha(name)){
-            return ("Fullname must is Alpha only.");
+            return ("Fullname must is Alpha only. No number or special char!");
+        }
+        return (null);
+    }
+
+    // validate the email data entry to meet requirements (xxx@yyy.zz)
+    // return null if valid, otherwise specific error message string will be return.
+    public String validEmail(String email) {
+        int apos = posOfAlias(email);
+        int elen = email.length();
+        if (elen <10 || apos == -1) {
+            return ("Invalid Email format.");
+        }
+        if (elen - apos < 7){
+            return ("Invalid Email format.");
+        } else {
+            String enam = email.substring(0, apos);
+            if (!isAlphanumeric(enam)){
+                return ("Invalid Email format.");
+            }
         }
         return (null);
     }

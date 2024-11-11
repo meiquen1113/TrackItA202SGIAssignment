@@ -51,6 +51,7 @@ public class SignupPage extends AppCompatActivity {
                 if (user.isEmpty() || pass.isEmpty() || name.isEmpty() || mail.isEmpty()) {
                     Toast.makeText(SignupPage.this, "Please enter all the fields!", Toast.LENGTH_SHORT).show();
                 } else {
+                    // input validation to ensure correct username, password, fullname & email format.
                     String validateMessage = checkInput.validUsername(user);
                     if ( validateMessage != null) {
                         Toast.makeText(SignupPage.this, validateMessage, Toast.LENGTH_SHORT).show();
@@ -66,11 +67,12 @@ public class SignupPage extends AppCompatActivity {
                         Toast.makeText(SignupPage.this, validateMessage, Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    if (checkInput.posOfAlias(mail)==-1){
-                        Toast.makeText(SignupPage.this, "Invalid Email format.",Toast.LENGTH_SHORT).show();
+                    validateMessage = checkInput.validEmail(mail);
+                    if ( validateMessage != null) {
+                        Toast.makeText(SignupPage.this, validateMessage, Toast.LENGTH_SHORT).show();
                         return;
                     }
-
+                    // check if username has been registered before.
                     if (userExist) {
                         Toast.makeText(SignupPage.this, "Username already exists!", Toast.LENGTH_SHORT).show();
                     } else {
